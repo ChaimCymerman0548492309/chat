@@ -18,7 +18,7 @@ export class AppController {
   @Get()
   async getResponse(@Query('message') message: string): Promise<any> {
     const prompt = `תן תשובה הולמת להודעה: ${message}`;
-    const response = await this.bardService.detectLanguage(prompt);
+    const response = await this.bardService.generateText(prompt);
     return response;
   }
 }
